@@ -8,7 +8,7 @@ part of 'active_model.dart';
 
 ActiveModel _$ActiveModelFromJson(Map<String, dynamic> json) => ActiveModel(
       data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Datum.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ActiveDatum.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -17,7 +17,7 @@ Map<String, dynamic> _$ActiveModelToJson(ActiveModel instance) =>
       'data': instance.data,
     };
 
-Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
+ActiveDatum _$ActiveDatumFromJson(Map<String, dynamic> json) => ActiveDatum(
       id: json['id'] as int?,
       name: json['name'] as String?,
       email: json['email'] as String?,
@@ -25,7 +25,8 @@ Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
       status: json['status'] as String?,
     );
 
-Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
+Map<String, dynamic> _$ActiveDatumToJson(ActiveDatum instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'email': instance.email,

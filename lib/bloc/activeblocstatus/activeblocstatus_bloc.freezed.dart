@@ -19,32 +19,38 @@ mixin _$ActiveblocstatusEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function(String searchQuery) searchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function(String searchQuery)? searchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function(String searchQuery)? searchStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Inizialize value) initialize,
+    required TResult Function(SearchStatus value) searchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Inizialize value)? initialize,
+    TResult Function(SearchStatus value)? searchStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Inizialize value)? initialize,
+    TResult Function(SearchStatus value)? searchStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +122,7 @@ class _$Inizialize with DiagnosticableTreeMixin implements Inizialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function(String searchQuery) searchStatus,
   }) {
     return initialize();
   }
@@ -124,6 +131,7 @@ class _$Inizialize with DiagnosticableTreeMixin implements Inizialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function(String searchQuery)? searchStatus,
   }) {
     return initialize?.call();
   }
@@ -132,6 +140,7 @@ class _$Inizialize with DiagnosticableTreeMixin implements Inizialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function(String searchQuery)? searchStatus,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -144,6 +153,7 @@ class _$Inizialize with DiagnosticableTreeMixin implements Inizialize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Inizialize value) initialize,
+    required TResult Function(SearchStatus value) searchStatus,
   }) {
     return initialize(this);
   }
@@ -152,6 +162,7 @@ class _$Inizialize with DiagnosticableTreeMixin implements Inizialize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Inizialize value)? initialize,
+    TResult Function(SearchStatus value)? searchStatus,
   }) {
     return initialize?.call(this);
   }
@@ -160,6 +171,7 @@ class _$Inizialize with DiagnosticableTreeMixin implements Inizialize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Inizialize value)? initialize,
+    TResult Function(SearchStatus value)? searchStatus,
     required TResult orElse(),
   }) {
     if (initialize != null) {
@@ -174,8 +186,153 @@ abstract class Inizialize implements ActiveblocstatusEvent {
 }
 
 /// @nodoc
+abstract class _$$SearchStatusCopyWith<$Res> {
+  factory _$$SearchStatusCopyWith(
+          _$SearchStatus value, $Res Function(_$SearchStatus) then) =
+      __$$SearchStatusCopyWithImpl<$Res>;
+  $Res call({String searchQuery});
+}
+
+/// @nodoc
+class __$$SearchStatusCopyWithImpl<$Res>
+    extends _$ActiveblocstatusEventCopyWithImpl<$Res>
+    implements _$$SearchStatusCopyWith<$Res> {
+  __$$SearchStatusCopyWithImpl(
+      _$SearchStatus _value, $Res Function(_$SearchStatus) _then)
+      : super(_value, (v) => _then(v as _$SearchStatus));
+
+  @override
+  _$SearchStatus get _value => super._value as _$SearchStatus;
+
+  @override
+  $Res call({
+    Object? searchQuery = freezed,
+  }) {
+    return _then(_$SearchStatus(
+      searchQuery: searchQuery == freezed
+          ? _value.searchQuery
+          : searchQuery // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchStatus with DiagnosticableTreeMixin implements SearchStatus {
+  const _$SearchStatus({required this.searchQuery});
+
+  @override
+  final String searchQuery;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ActiveblocstatusEvent.searchStatus(searchQuery: $searchQuery)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ActiveblocstatusEvent.searchStatus'))
+      ..add(DiagnosticsProperty('searchQuery', searchQuery));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchStatus &&
+            const DeepCollectionEquality()
+                .equals(other.searchQuery, searchQuery));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(searchQuery));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$SearchStatusCopyWith<_$SearchStatus> get copyWith =>
+      __$$SearchStatusCopyWithImpl<_$SearchStatus>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function(String searchQuery) searchStatus,
+  }) {
+    return searchStatus(searchQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(String searchQuery)? searchStatus,
+  }) {
+    return searchStatus?.call(searchQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function(String searchQuery)? searchStatus,
+    required TResult orElse(),
+  }) {
+    if (searchStatus != null) {
+      return searchStatus(searchQuery);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Inizialize value) initialize,
+    required TResult Function(SearchStatus value) searchStatus,
+  }) {
+    return searchStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Inizialize value)? initialize,
+    TResult Function(SearchStatus value)? searchStatus,
+  }) {
+    return searchStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Inizialize value)? initialize,
+    TResult Function(SearchStatus value)? searchStatus,
+    required TResult orElse(),
+  }) {
+    if (searchStatus != null) {
+      return searchStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchStatus implements ActiveblocstatusEvent {
+  const factory SearchStatus({required final String searchQuery}) =
+      _$SearchStatus;
+
+  String get searchQuery => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$SearchStatusCopyWith<_$SearchStatus> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ActiveblocstatusState {
-  List<Datum> get activestatuslist => throw _privateConstructorUsedError;
+  List<ActiveDatum> get activestatuslist => throw _privateConstructorUsedError;
+  List<ActiveDatum> get searchReslut => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isError => throw _privateConstructorUsedError;
 
@@ -189,7 +346,11 @@ abstract class $ActiveblocstatusStateCopyWith<$Res> {
   factory $ActiveblocstatusStateCopyWith(ActiveblocstatusState value,
           $Res Function(ActiveblocstatusState) then) =
       _$ActiveblocstatusStateCopyWithImpl<$Res>;
-  $Res call({List<Datum> activestatuslist, bool isLoading, bool isError});
+  $Res call(
+      {List<ActiveDatum> activestatuslist,
+      List<ActiveDatum> searchReslut,
+      bool isLoading,
+      bool isError});
 }
 
 /// @nodoc
@@ -204,6 +365,7 @@ class _$ActiveblocstatusStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? activestatuslist = freezed,
+    Object? searchReslut = freezed,
     Object? isLoading = freezed,
     Object? isError = freezed,
   }) {
@@ -211,7 +373,11 @@ class _$ActiveblocstatusStateCopyWithImpl<$Res>
       activestatuslist: activestatuslist == freezed
           ? _value.activestatuslist
           : activestatuslist // ignore: cast_nullable_to_non_nullable
-              as List<Datum>,
+              as List<ActiveDatum>,
+      searchReslut: searchReslut == freezed
+          ? _value.searchReslut
+          : searchReslut // ignore: cast_nullable_to_non_nullable
+              as List<ActiveDatum>,
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -231,7 +397,11 @@ abstract class _$$_ActiveblocstatusStateCopyWith<$Res>
           $Res Function(_$_ActiveblocstatusState) then) =
       __$$_ActiveblocstatusStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Datum> activestatuslist, bool isLoading, bool isError});
+  $Res call(
+      {List<ActiveDatum> activestatuslist,
+      List<ActiveDatum> searchReslut,
+      bool isLoading,
+      bool isError});
 }
 
 /// @nodoc
@@ -249,6 +419,7 @@ class __$$_ActiveblocstatusStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? activestatuslist = freezed,
+    Object? searchReslut = freezed,
     Object? isLoading = freezed,
     Object? isError = freezed,
   }) {
@@ -256,7 +427,11 @@ class __$$_ActiveblocstatusStateCopyWithImpl<$Res>
       activestatuslist: activestatuslist == freezed
           ? _value._activestatuslist
           : activestatuslist // ignore: cast_nullable_to_non_nullable
-              as List<Datum>,
+              as List<ActiveDatum>,
+      searchReslut: searchReslut == freezed
+          ? _value._searchReslut
+          : searchReslut // ignore: cast_nullable_to_non_nullable
+              as List<ActiveDatum>,
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -275,16 +450,25 @@ class _$_ActiveblocstatusState
     with DiagnosticableTreeMixin
     implements _ActiveblocstatusState {
   const _$_ActiveblocstatusState(
-      {required final List<Datum> activestatuslist,
+      {required final List<ActiveDatum> activestatuslist,
+      required final List<ActiveDatum> searchReslut,
       required this.isLoading,
       required this.isError})
-      : _activestatuslist = activestatuslist;
+      : _activestatuslist = activestatuslist,
+        _searchReslut = searchReslut;
 
-  final List<Datum> _activestatuslist;
+  final List<ActiveDatum> _activestatuslist;
   @override
-  List<Datum> get activestatuslist {
+  List<ActiveDatum> get activestatuslist {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_activestatuslist);
+  }
+
+  final List<ActiveDatum> _searchReslut;
+  @override
+  List<ActiveDatum> get searchReslut {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_searchReslut);
   }
 
   @override
@@ -294,7 +478,7 @@ class _$_ActiveblocstatusState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ActiveblocstatusState(activestatuslist: $activestatuslist, isLoading: $isLoading, isError: $isError)';
+    return 'ActiveblocstatusState(activestatuslist: $activestatuslist, searchReslut: $searchReslut, isLoading: $isLoading, isError: $isError)';
   }
 
   @override
@@ -303,6 +487,7 @@ class _$_ActiveblocstatusState
     properties
       ..add(DiagnosticsProperty('type', 'ActiveblocstatusState'))
       ..add(DiagnosticsProperty('activestatuslist', activestatuslist))
+      ..add(DiagnosticsProperty('searchReslut', searchReslut))
       ..add(DiagnosticsProperty('isLoading', isLoading))
       ..add(DiagnosticsProperty('isError', isError));
   }
@@ -314,6 +499,8 @@ class _$_ActiveblocstatusState
             other is _$_ActiveblocstatusState &&
             const DeepCollectionEquality()
                 .equals(other._activestatuslist, _activestatuslist) &&
+            const DeepCollectionEquality()
+                .equals(other._searchReslut, _searchReslut) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality().equals(other.isError, isError));
   }
@@ -322,6 +509,7 @@ class _$_ActiveblocstatusState
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_activestatuslist),
+      const DeepCollectionEquality().hash(_searchReslut),
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(isError));
 
@@ -334,12 +522,15 @@ class _$_ActiveblocstatusState
 
 abstract class _ActiveblocstatusState implements ActiveblocstatusState {
   const factory _ActiveblocstatusState(
-      {required final List<Datum> activestatuslist,
+      {required final List<ActiveDatum> activestatuslist,
+      required final List<ActiveDatum> searchReslut,
       required final bool isLoading,
       required final bool isError}) = _$_ActiveblocstatusState;
 
   @override
-  List<Datum> get activestatuslist => throw _privateConstructorUsedError;
+  List<ActiveDatum> get activestatuslist => throw _privateConstructorUsedError;
+  @override
+  List<ActiveDatum> get searchReslut => throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;
   @override
